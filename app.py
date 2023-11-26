@@ -31,6 +31,8 @@ selected = st.selectbox("Choose an option", options)
 with st.form("Form"):
     if selected == options[0]:
         input_audio = st.file_uploader("Upload your .wav audio file here")
+        if input_audio:
+            st.audio(input_audio)
     if selected == options[1]:
         st.write("Record your audio")
         audio_data = st_audiorec()
